@@ -2413,1255 +2413,1532 @@ document.querySelectorAll('.page-nav-button').forEach(button => {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GIAS Institute — Global AI Standards Authority</title>
-<meta name="description" content="The Global Interoperability and AI Standards Institute. Independent international standards for the certification and governance of artificial intelligence systems. Seat: Geneva, Switzerland.">
-<meta property="og:title" content="GIAS Institute — Global AI Standards Authority">
-<meta property="og:description" content="Independent international standards for the certification and governance of artificial intelligence systems.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ── ROOT ─────────────────────────────────────────────────────────────────── */
-:root {
-  --navy:       #1B2A4A;
-  --navy-deep:  #0F1A30;
-  --navy-mid:   #243660;
-  --navy-light: #2E4A7A;
-  --gold:       #B8962E;
-  --gold-light: #D4AF50;
-  --gold-pale:  #F5EDD6;
-  --gold-dim:   #8A6E1F;
-  --cream:      #F8F6F0;
-  --white:      #FFFFFF;
-  --grey-100:   #F2F0EA;
-  --grey-300:   #D4D0C4;
-  --grey-500:   #8C8878;
-  --grey-700:   #4A4840;
-  --text:       #1A1814;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIAS Institute — Global AI Standards Authority</title>
+  <meta name="description"
+    content="The Global Interoperability and AI Standards Institute. Independent international standards for the certification and governance of artificial intelligence systems. Seat: Geneva, Switzerland.">
+  <meta property="og:title" content="GIAS Institute — Global AI Standards Authority">
+  <meta property="og:description"
+    content="Independent international standards for the certification and governance of artificial intelligence systems.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ── ROOT ─────────────────────────────────────────────────────────────────── */
+    :root {
+      --navy: #1B2A4A;
+      --navy-deep: #0F1A30;
+      --navy-mid: #243660;
+      --navy-light: #2E4A7A;
+      --gold: #B8962E;
+      --gold-light: #D4AF50;
+      --gold-pale: #F5EDD6;
+      --gold-dim: #8A6E1F;
+      --cream: #F8F6F0;
+      --white: #FFFFFF;
+      --grey-100: #F2F0EA;
+      --grey-300: #D4D0C4;
+      --grey-500: #8C8878;
+      --grey-700: #4A4840;
+      --text: #1A1814;
 
-  --display: 'Syne', system-ui, sans-serif;
-  --serif:   'Cormorant Garamond', Georgia, serif;
-  --mono:    'JetBrains Mono', monospace;
-}
+      --display: 'Syne', system-ui, sans-serif;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: var(--serif);
-  background: var(--navy-deep);
-  color: var(--white);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
 
-/* ── CURSOR ───────────────────────────────────────────────────────────────── */
-*, a, button { cursor: default; }
+    body {
+      font-family: var(--serif);
+      background: var(--navy-deep);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-/* ── TOP RIBBON ───────────────────────────────────────────────────────────── */
-.ribbon {
-  background: var(--gold);
-  padding: 7px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.ribbon-text {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--navy-deep);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.ribbon-ref {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: rgba(15,26,48,0.6);
-  letter-spacing: 0.08em;
-}
+    /* ── CURSOR ───────────────────────────────────────────────────────────────── */
+    *,
+    a,
+    button {
+      cursor: default;
+    }
 
-/* ── HEADER ───────────────────────────────────────────────────────────────── */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(15,26,48,0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(184,150,46,0.2);
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px;
-  height: 72px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-}
-.logo-mark {
-  width: 44px;
-  height: 44px;
-  border: 1.5px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-shrink: 0;
-}
-.logo-mark::before {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  border: 1px solid rgba(184,150,46,0.3);
-}
-.logo-mark svg { width: 20px; height: 20px; }
-.logo-wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-.logo-name {
-  font-family: var(--display);
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  line-height: 1;
-}
-.logo-name span { color: var(--gold-light); }
-.logo-seat {
-  font-family: var(--mono);
-  font-size: 9.5px;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-.header-nav a {
-  font-family: var(--display);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.header-nav a:hover { color: var(--gold-light); }
-.header-cta {
-  font-family: var(--mono) !important;
-  font-size: 10.5px !important;
-  color: var(--gold) !important;
-  border: 1px solid rgba(184,150,46,0.4);
-  padding: 8px 18px;
-  letter-spacing: 0.12em !important;
-  transition: all 0.2s !important;
-}
-.header-cta:hover {
-  background: rgba(184,150,46,0.1) !important;
-  border-color: var(--gold) !important;
-  color: var(--gold-light) !important;
-}
+    /* ── TOP RIBBON ───────────────────────────────────────────────────────────── */
+    .ribbon {
+      background: var(--gold);
+      padding: 7px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-/* ── HERO ─────────────────────────────────────────────────────────────────── */
-.hero {
-  min-height: 92vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding: 80px 48px;
-}
+    .ribbon-text {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--navy-deep);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
 
-/* Background texture layers */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(46,74,122,0.5) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 50% at 90% 80%, rgba(184,150,46,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 30% 40% at 10% 20%, rgba(184,150,46,0.05) 0%, transparent 50%);
-  pointer-events: none;
-}
+    .ribbon-ref {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: rgba(15, 26, 48, 0.6);
+      letter-spacing: 0.08em;
+    }
 
-/* Diagonal rule lines */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -60deg,
-    transparent,
-    transparent 60px,
-    rgba(255,255,255,0.012) 60px,
-    rgba(255,255,255,0.012) 61px
-  );
-  pointer-events: none;
-}
+    /* ── HEADER ───────────────────────────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 26, 48, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184, 150, 46, 0.2);
+    }
 
-/* Large background text */
-.hero-bg-text {
-  position: absolute;
-  bottom: -40px;
-  right: -20px;
-  font-family: var(--display);
-  font-size: clamp(120px, 18vw, 240px);
-  font-weight: 800;
-  color: rgba(255,255,255,0.025);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-}
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-.hero-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
 
-.hero-left {}
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
 
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-.hero-eyebrow-line {
-  width: 48px;
-  height: 1px;
-  background: var(--gold);
-}
-.hero-eyebrow-text {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
+    .logo-mark::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(184, 150, 46, 0.3);
+    }
 
-.hero-title {
-  font-family: var(--serif);
-  font-size: clamp(42px, 5.5vw, 78px);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 32px;
-}
-.hero-title em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-.hero-title strong {
-  font-weight: 600;
-  display: block;
-}
+    .logo-mark svg {
+      width: 20px;
+      height: 20px;
+    }
 
-.hero-statement {
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.75;
-  max-width: 480px;
-  margin-bottom: 48px;
-  letter-spacing: 0.01em;
-}
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
+    .logo-name {
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--gold);
-  color: var(--navy-deep);
-  font-family: var(--display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 14px 28px;
-  text-decoration: none;
-  transition: all 0.25s;
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gold-light);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-}
-.btn-primary:hover::before { transform: translateX(0); }
-.btn-primary span { position: relative; z-index: 1; }
+    .logo-name span {
+      color: var(--gold-light);
+    }
 
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255,255,255,0.6);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 2px;
-  transition: all 0.2s;
-}
-.btn-secondary:hover {
-  color: var(--gold-light);
-  border-bottom-color: var(--gold);
-}
+    .logo-seat {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-/* Right panel — institutional facts */
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
 
-.fact-card {
-  border-left: 2px solid rgba(184,150,46,0.2);
-  padding: 24px 28px;
-  margin-bottom: 0;
-  transition: border-left-color 0.3s;
-}
-.fact-card:hover { border-left-color: var(--gold); }
-.fact-card + .fact-card {
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-.fact-num {
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 600;
-  color: var(--gold-light);
-  line-height: 1;
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
-.fact-label {
-  font-family: var(--display);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.fact-desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.6;
-}
+    .header-nav a {
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-/* Gold divider at bottom of hero */
-.hero-rule {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
-}
+    .header-nav a:hover {
+      color: var(--gold-light);
+    }
 
-/* ── SECTION: PUBLISHED STANDARD ─────────────────────────────────────────── */
-.schema-section {
-  background: var(--cream);
-  padding: 100px 48px;
-  position: relative;
-}
+    .header-cta {
+      font-family: var(--mono) !important;
+      font-size: 10.5px !important;
+      color: var(--gold) !important;
+      border: 1px solid rgba(184, 150, 46, 0.4);
+      padding: 8px 18px;
+      letter-spacing: 0.12em !important;
+      transition: all 0.2s !important;
+    }
 
-.schema-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
+    .header-cta:hover {
+      background: rgba(184, 150, 46, 0.1) !important;
+      border-color: var(--gold) !important;
+      color: var(--gold-light) !important;
+    }
 
-.section-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
-}
-.eyebrow-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--navy);
-  background: rgba(27,42,74,0.08);
-  border: 1px solid rgba(27,42,74,0.15);
-  padding: 4px 12px;
-}
-.eyebrow-tag.gold {
-  color: var(--gold-dim);
-  background: rgba(184,150,46,0.08);
-  border-color: rgba(184,150,46,0.25);
-}
+    /* ── HERO ─────────────────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 48px;
+    }
 
-.section-title-light {
-  font-family: var(--serif);
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 400;
-  color: var(--navy);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-}
-.section-title-light em {
-  font-style: italic;
-  color: var(--gold-dim);
-}
+    /* Background texture layers */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(46, 74, 122, 0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 90% 80%, rgba(184, 150, 46, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 10% 20%, rgba(184, 150, 46, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
 
-.section-body {
-  font-size: 16px;
-  color: var(--grey-700);
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
+    /* Diagonal rule lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(-60deg,
+          transparent,
+          transparent 60px,
+          rgba(255, 255, 255, 0.012) 60px,
+          rgba(255, 255, 255, 0.012) 61px);
+      pointer-events: none;
+    }
 
-.schema-card {
-  background: var(--navy-deep);
-  border: 1px solid rgba(184,150,46,0.2);
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-}
-.schema-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-light));
-}
+    /* Large background text */
+    .hero-bg-text {
+      position: absolute;
+      bottom: -40px;
+      right: -20px;
+      font-family: var(--display);
+      font-size: clamp(120px, 18vw, 240px);
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.025);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
 
-.schema-ref {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--gold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
+    .hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
 
-.schema-title {
-  font-family: var(--serif);
-  font-size: 26px;
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
+    .hero-left {}
 
-.schema-meta-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-.schema-meta-item {}
-.smi-label {
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 4px;
-}
-.smi-value {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--gold-light);
-}
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
 
-.schema-indicators {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 28px;
-}
-.indicator-chip {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 4px 10px;
-  letter-spacing: 0.06em;
-}
+    .hero-eyebrow-line {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+    }
 
-.schema-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--gold-light);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(212,175,80,0.3);
-  padding-bottom: 2px;
-  transition: all 0.2s;
-}
-.schema-link:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
-}
+    .hero-eyebrow-text {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
 
-/* ── SECTION: MANDATE ─────────────────────────────────────────────────────── */
-.mandate-section {
-  background: var(--navy);
-  padding: 100px 48px;
-  position: relative;
-  overflow: hidden;
-}
-.mandate-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 80px,
-    rgba(184,150,46,0.02) 80px,
-    rgba(184,150,46,0.02) 82px
-  );
-  pointer-events: none;
-}
-.mandate-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.mandate-header {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
-  margin-bottom: 72px;
-  align-items: start;
-}
-.mandate-label-col {
-  padding-top: 8px;
-}
-.mandate-big-label {
-  font-family: var(--display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-.mandate-title {
-  font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 56px);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-.mandate-title em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-.mandate-statement {
-  font-size: 19px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.8;
-  letter-spacing: 0.01em;
-}
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.5vw, 78px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
 
-.mandate-pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: rgba(184,150,46,0.1);
-}
-.pillar {
-  background: rgba(15,26,48,0.8);
-  padding: 40px 36px;
-  transition: background 0.25s;
-}
-.pillar:hover { background: rgba(27,42,74,0.9); }
-.pillar-num {
-  font-family: var(--serif);
-  font-size: 56px;
-  font-weight: 300;
-  color: rgba(184,150,46,0.2);
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-}
-.pillar-title {
-  font-family: var(--display);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--gold-light);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.pillar-text {
-  font-size: 14px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.7;
-}
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
 
-/* ── SECTION: GOVERNANCE ─────────────────────────────────────────────────── */
-.governance-section {
-  background: var(--cream);
-  padding: 100px 48px;
-}
-.governance-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-.governance-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.governance-statement {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--navy);
-  line-height: 1.65;
-  letter-spacing: 0.005em;
-  margin-bottom: 40px;
-}
-.governance-statement strong {
-  color: var(--navy-deep);
-  font-weight: 600;
-}
-.governance-statement em {
-  font-style: italic;
-  color: var(--gold-dim);
-}
+    .hero-title strong {
+      font-weight: 600;
+      display: block;
+    }
 
-.governance-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.gov-detail {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--grey-300);
-  display: flex;
-  gap: 16px;
-  align-items: start;
-}
-.gov-detail:first-child { border-top: 1px solid var(--grey-300); }
-.gov-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  flex-shrink: 0;
-  margin-top: 8px;
-}
-.gov-detail-text {
-  font-size: 14px;
-  color: var(--grey-700);
-  line-height: 1.6;
-}
-.gov-detail-text strong {
-  color: var(--navy);
-  font-family: var(--display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 4px;
-}
+    .hero-statement {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: 48px;
+      letter-spacing: 0.01em;
+    }
 
-.governance-aside {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.gov-aside-card {
-  background: var(--navy-deep);
-  padding: 28px;
-  border-left: 3px solid var(--gold);
-}
-.gov-aside-label {
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 10px;
-}
-.gov-aside-text {
-  font-size: 13.5px;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.65;
-}
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
 
-/* ── SECTION: CONTACT ─────────────────────────────────────────────────────── */
-.contact-section {
-  background: var(--navy-deep);
-  padding: 100px 48px;
-  position: relative;
-  overflow: hidden;
-}
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
-}
-.contact-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.contact-left {}
-.contact-headline {
-  font-family: var(--serif);
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-}
-.contact-headline em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-.contact-body {
-  font-size: 16px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.75;
-  margin-bottom: 40px;
-}
-.contact-address {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.contact-line {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.contact-line-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  width: 80px;
-  flex-shrink: 0;
-}
-.contact-line-value {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--gold-light);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-a.contact-line-value:hover { color: var(--white); }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      text-decoration: none;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
 
-.contact-right {}
-.contact-note {
-  border: 1px solid rgba(184,150,46,0.2);
-  padding: 40px;
-  position: relative;
-}
-.contact-note::before {
-  content: '"';
-  position: absolute;
-  top: -20px;
-  left: 32px;
-  font-family: var(--serif);
-  font-size: 80px;
-  color: var(--gold);
-  line-height: 1;
-  font-style: italic;
-}
-.contact-note-text {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.7;
-  font-style: italic;
-  margin-bottom: 20px;
-}
-.contact-note-source {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold-light);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
 
-/* ── FOOTER ───────────────────────────────────────────────────────────────── */
-footer {
-  background: var(--navy-deep);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 40px 48px;
-}
-.footer-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.footer-name {
-  font-family: var(--display);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-}
-.footer-name span { color: var(--gold); }
-.footer-details {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.08em;
-  text-align: center;
-}
-.footer-schema {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: rgba(255,255,255,0.25);
-  letter-spacing: 0.06em;
-  text-align: right;
-}
-.footer-schema a {
-  color: rgba(184,150,46,0.5);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-schema a:hover { color: var(--gold); }
+    .btn-primary:hover::before {
+      transform: translateX(0);
+    }
 
-/* ── ANIMATIONS ───────────────────────────────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes slideRight {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
+    .btn-primary span {
+      position: relative;
+      z-index: 1;
+    }
 
-.hero-eyebrow { animation: fadeUp 0.6s ease 0.1s both; }
-.hero-title   { animation: fadeUp 0.7s ease 0.2s both; }
-.hero-statement { animation: fadeUp 0.7s ease 0.35s both; }
-.hero-actions { animation: fadeUp 0.7s ease 0.5s both; }
-.hero-right   { animation: fadeUp 0.8s ease 0.4s both; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
 
-.hero-rule { animation: slideRight 1.2s ease 0.8s both; transform-origin: left; }
+    .btn-secondary:hover {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
+    /* Right panel — institutional facts */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
 
-/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 60px; }
-  .hero-right { display: none; }
-  .schema-inner { grid-template-columns: 1fr; }
-  .mandate-header { grid-template-columns: 1fr; gap: 32px; }
-  .mandate-pillars { grid-template-columns: 1fr; }
-  .governance-grid { grid-template-columns: 1fr; }
-  .contact-inner { grid-template-columns: 1fr; }
-  .contact-right { display: none; }
-}
-@media (max-width: 768px) {
-  .ribbon { padding: 7px 20px; }
-  .ribbon-ref { display: none; }
-  .header-inner { padding: 0 20px; }
-  .header-nav { display: none; }
-  .hero { padding: 60px 20px; }
-  .schema-section, .mandate-section, .governance-section, .contact-section { padding: 72px 20px; }
-  footer { padding: 32px 20px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-schema { text-align: left; }
-}
-</style>
+    .fact-card {
+      border-left: 2px solid rgba(184, 150, 46, 0.2);
+      padding: 24px 28px;
+      margin-bottom: 0;
+      transition: border-left-color 0.3s;
+    }
+
+    .fact-card:hover {
+      border-left-color: var(--gold);
+    }
+
+    .fact-card+.fact-card {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .fact-num {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .fact-label {
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .fact-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.6;
+    }
+
+    /* Gold divider at bottom of hero */
+    .hero-rule {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+    }
+
+    /* ── SECTION: PUBLISHED STANDARD ─────────────────────────────────────────── */
+    .schema-section {
+      background: var(--cream);
+      padding: 100px 48px;
+      position: relative;
+    }
+
+    .schema-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(27, 42, 74, 0.08);
+      border: 1px solid rgba(27, 42, 74, 0.15);
+      padding: 4px 12px;
+    }
+
+    .eyebrow-tag.gold {
+      color: var(--gold-dim);
+      background: rgba(184, 150, 46, 0.08);
+      border-color: rgba(184, 150, 46, 0.25);
+    }
+
+    .section-title-light {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .section-title-light em {
+      font-style: italic;
+      color: var(--gold-dim);
+    }
+
+    .section-body {
+      font-size: 16px;
+      color: var(--grey-700);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .schema-card {
+      background: var(--navy-deep);
+      border: 1px solid rgba(184, 150, 46, 0.2);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .schema-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+
+    .schema-ref {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .schema-title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .schema-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .schema-meta-item {}
+
+    .smi-label {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 4px;
+    }
+
+    .smi-value {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--gold-light);
+    }
+
+    .schema-indicators {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .indicator-chip {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4px 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .schema-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212, 175, 80, 0.3);
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+
+    .schema-link:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── SECTION: MANDATE ─────────────────────────────────────────────────────── */
+    .mandate-section {
+      background: var(--navy);
+      padding: 100px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mandate-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg,
+          transparent,
+          transparent 80px,
+          rgba(184, 150, 46, 0.02) 80px,
+          rgba(184, 150, 46, 0.02) 82px);
+      pointer-events: none;
+    }
+
+    .mandate-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mandate-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      margin-bottom: 72px;
+      align-items: start;
+    }
+
+    .mandate-label-col {
+      padding-top: 8px;
+    }
+
+    .mandate-big-label {
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .mandate-title {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .mandate-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .mandate-statement {
+      font-size: 19px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+    }
+
+    .mandate-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(184, 150, 46, 0.1);
+    }
+
+    .pillar {
+      background: rgba(15, 26, 48, 0.8);
+      padding: 40px 36px;
+      transition: background 0.25s;
+    }
+
+    .pillar:hover {
+      background: rgba(27, 42, 74, 0.9);
+    }
+
+    .pillar-num {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 300;
+      color: rgba(184, 150, 46, 0.2);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .pillar-title {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .pillar-text {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+    }
+
+    /* ── SECTION: GOVERNANCE ─────────────────────────────────────────────────── */
+    .governance-section {
+      background: var(--cream);
+      padding: 100px 48px;
+    }
+
+    .governance-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .governance-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .governance-statement {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.65;
+      letter-spacing: 0.005em;
+      margin-bottom: 40px;
+    }
+
+    .governance-statement strong {
+      color: var(--navy-deep);
+      font-weight: 600;
+    }
+
+    .governance-statement em {
+      font-style: italic;
+      color: var(--gold-dim);
+    }
+
+    .governance-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .gov-detail {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--grey-300);
+      display: flex;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .gov-detail:first-child {
+      border-top: 1px solid var(--grey-300);
+    }
+
+    .gov-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .gov-detail-text {
+      font-size: 14px;
+      color: var(--grey-700);
+      line-height: 1.6;
+    }
+
+    .gov-detail-text strong {
+      color: var(--navy);
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .governance-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .gov-aside-card {
+      background: var(--navy-deep);
+      padding: 28px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .gov-aside-label {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .gov-aside-text {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.65;
+    }
+
+    /* ── SECTION: CONTACT ─────────────────────────────────────────────────────── */
+    .contact-section {
+      background: var(--navy-deep);
+      padding: 100px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+    }
+
+    .contact-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-left {}
+
+    .contact-headline {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .contact-headline em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .contact-body {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .contact-address {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-line-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      width: 80px;
+      flex-shrink: 0;
+    }
+
+    .contact-line-value {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--gold-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a.contact-line-value:hover {
+      color: var(--white);
+    }
+
+    .contact-right {}
+
+    .contact-note {
+      border: 1px solid rgba(184, 150, 46, 0.2);
+      padding: 40px;
+      position: relative;
+    }
+
+    .contact-note::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 32px;
+      font-family: var(--serif);
+      font-size: 80px;
+      color: var(--gold);
+      line-height: 1;
+      font-style: italic;
+    }
+
+    .contact-note-text {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .contact-note-source {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────────────── */
+    footer {
+      background: var(--navy-deep);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 40px 48px;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-name {
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-name span {
+      color: var(--gold);
+    }
+
+    .footer-details {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .footer-schema {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.25);
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+
+    .footer-schema a {
+      color: rgba(184, 150, 46, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-schema a:hover {
+      color: var(--gold);
+    }
+
+    /* ── ANIMATIONS ───────────────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideRight {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .hero-eyebrow {
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+
+    .hero-title {
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+
+    .hero-statement {
+      animation: fadeUp 0.7s ease 0.35s both;
+    }
+
+    .hero-actions {
+      animation: fadeUp 0.7s ease 0.5s both;
+    }
+
+    .hero-right {
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+
+    .hero-rule {
+      animation: slideRight 1.2s ease 0.8s both;
+      transform-origin: left;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
+      .schema-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .mandate-header {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .mandate-pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .governance-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-right {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ribbon {
+        padding: 7px 20px;
+      }
+
+      .ribbon-ref {
+        display: none;
+      }
+
+      .header-inner {
+        padding: 0 20px;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .schema-section,
+      .mandate-section,
+      .governance-section,
+      .contact-section {
+        padding: 72px 20px;
+      }
+
+      footer {
+        padding: 32px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .footer-schema {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- TOP RIBBON -->
-<div class="ribbon">
-  <span class="ribbon-text">Global Interoperability and AI Standards Institute &nbsp;·&nbsp; Seat: Geneva, Switzerland &nbsp;·&nbsp; Established 2025</span>
-  <span class="ribbon-ref">GIAS INSTITUTE &nbsp;·&nbsp; AI STANDARDS AUTHORITY</span>
-</div>
-
-<!-- HEADER -->
-<header>
-  <div class="header-inner">
-    <a class="logo" href="/">
-      <div class="logo-mark">
-        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="10" r="8.5" stroke="#B8962E" stroke-width="1"/>
-          <path d="M10 1.5C10 1.5 14 5.5 14 10C14 14.5 10 18.5 10 18.5" stroke="#B8962E" stroke-width="0.75"/>
-          <path d="M10 1.5C10 1.5 6 5.5 6 10C6 14.5 10 18.5 10 18.5" stroke="#B8962E" stroke-width="0.75"/>
-          <line x1="1.5" y1="10" x2="18.5" y2="10" stroke="#B8962E" stroke-width="0.75"/>
-          <line x1="2.5" y1="6.5" x2="17.5" y2="6.5" stroke="#B8962E" stroke-width="0.5" stroke-dasharray="1 1"/>
-          <line x1="2.5" y1="13.5" x2="17.5" y2="13.5" stroke="#B8962E" stroke-width="0.5" stroke-dasharray="1 1"/>
-        </svg>
-      </div>
-      <div class="logo-wordmark">
-        <span class="logo-name">GIAS <span>Institute</span></span>
-        <span class="logo-seat">Geneva, Switzerland</span>
-      </div>
-    </a>
-    <nav class="header-nav">
-      <a href="#mandate">Mandate</a>
-      <a href="#standards">Standards</a>
-      <a href="#governance">Governance</a>
-      <a href="#contact" class="header-cta">Contact</a>
-    </nav>
+  <!-- TOP RIBBON -->
+  <div class="ribbon">
+    <span class="ribbon-text">Global Interoperability and AI Standards Institute &nbsp;·&nbsp; Seat: Geneva, Switzerland
+      &nbsp;·&nbsp; Established 2025</span>
+    <span class="ribbon-ref">GIAS INSTITUTE &nbsp;·&nbsp; AI STANDARDS AUTHORITY</span>
   </div>
-</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-text">GIAS</div>
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">Geneva &nbsp;·&nbsp; AI Standards Authority &nbsp;·&nbsp; Est. 2025</span>
-      </div>
-      <h1 class="hero-title">
-        The trust<br>
-        <em>infrastructure</em><br>
-        <strong>AI runs on.</strong>
-      </h1>
-      <p class="hero-statement">
-        GIAS Institute develops and administers international standards for the certification and governance of artificial intelligence systems — serving as an independent, permanently neutral trust infrastructure for the global AI industry.
-      </p>
-      <div class="hero-actions">
-        <a href="https://schema.gias.institute" class="btn-primary">
-          <span>View Published Schema</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#mandate" class="btn-secondary">
-          Our mandate
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="/">
+        <div class="logo-mark">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="8.5" stroke="#B8962E" stroke-width="1" />
+            <path d="M10 1.5C10 1.5 14 5.5 14 10C14 14.5 10 18.5 10 18.5" stroke="#B8962E" stroke-width="0.75" />
+            <path d="M10 1.5C10 1.5 6 5.5 6 10C6 14.5 10 18.5 10 18.5" stroke="#B8962E" stroke-width="0.75" />
+            <line x1="1.5" y1="10" x2="18.5" y2="10" stroke="#B8962E" stroke-width="0.75" />
+            <line x1="2.5" y1="6.5" x2="17.5" y2="6.5" stroke="#B8962E" stroke-width="0.5" stroke-dasharray="1 1" />
+            <line x1="2.5" y1="13.5" x2="17.5" y2="13.5" stroke="#B8962E" stroke-width="0.5" stroke-dasharray="1 1" />
+          </svg>
+        </div>
+        <div class="logo-wordmark">
+          <span class="logo-name">GIAS <span>Institute</span></span>
+          <span class="logo-seat">Geneva, Switzerland</span>
+        </div>
+      </a>
+      <nav class="header-nav">
+        <a href="#mandate">Mandate</a>
+        <a href="#standards">Standards</a>
+        <a href="#governance">Governance</a>
+        <a href="#contact" class="header-cta">Contact</a>
+      </nav>
     </div>
-    <div class="hero-right">
-      <div class="fact-card">
-        <div class="fact-num">Art. 60–79</div>
-        <div class="fact-label">Swiss Civil Code</div>
-        <div class="fact-desc">Constituted as a Swiss association under the laws of Switzerland, with permanent seat in Geneva.</div>
-      </div>
-      <div class="fact-card">
-        <div class="fact-num">v1.0</div>
-        <div class="fact-label">First Published Standard</div>
-        <div class="fact-desc">EU AI Act machine-readable compliance schema — publicly available and freely citable.</div>
-      </div>
-      <div class="fact-card">
-        <div class="fact-num">ISO · ITU</div>
-        <div class="fact-label">Institutional Model</div>
-        <div class="fact-desc">Designed in the tradition of permanent international standards bodies. Not a commercial entity.</div>
-      </div>
-      <div class="fact-card">
-        <div class="fact-num">Global</div>
-        <div class="fact-label">Jurisdictional Reach</div>
-        <div class="fact-desc">Standards designed to operate across regulatory frameworks without commercial or geopolitical capture.</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-rule"></div>
-</section>
+  </header>
 
-<!-- PUBLISHED STANDARD -->
-<section class="schema-section" id="standards">
-  <div class="schema-inner">
-    <div class="reveal">
-      <div class="section-eyebrow">
-        <span class="eyebrow-tag gold">Published Standard</span>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-text">GIAS</div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Geneva &nbsp;·&nbsp; AI Standards Authority &nbsp;·&nbsp; Est. 2025</span>
+        </div>
+        <h1 class="hero-title">
+          The trust<br>
+          <em>infrastructure</em><br>
+          <strong>AI runs on.</strong>
+        </h1>
+        <p class="hero-statement">
+          GIAS Institute develops and administers international standards for the certification and governance of
+          artificial intelligence systems — serving as an independent, permanently neutral trust infrastructure for the
+          global AI industry.
+        </p>
+        <div class="hero-actions">
+        <a href="index2.html" class="btn-primary">
+            <span>View Published Schema</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#mandate" class="btn-secondary">
+            Our mandate
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
       </div>
-      <h2 class="section-title-light">
-        The first<br>
-        <em>machine-readable</em><br>
-        AI compliance schema.
-      </h2>
-      <p class="section-body">
-        GIAS Institute has published its inaugural standard: a structured, machine-readable compliance schema for the EU Artificial Intelligence Act. The schema maps every prohibited practice, all eight Annex III high-risk categories, seven mandatory technical requirements, provider obligations, and the full penalty structure — in a format that AI systems can query directly.
-      </p>
-      <p class="section-body" style="margin-bottom:0;">
-        This is the technical proof of GIAS's function. Standards bodies do not only govern — they produce. This schema is freely available, openly licensed, and designed to be integrated into compliance tooling, regulatory submissions, and conformity assessment systems worldwide.
-      </p>
-    </div>
-    <div class="reveal reveal-delay-2">
-      <div class="schema-card">
-        <div class="schema-ref">GIAS-SCH-EUAIA-2025-001 &nbsp;·&nbsp; Published Standard</div>
-        <div class="schema-title">EU Artificial Intelligence Act Compliance Schema</div>
-        <div class="schema-meta-grid">
-          <div class="schema-meta-item">
-            <div class="smi-label">Regulation</div>
-            <div class="smi-value">EU 2024/1689</div>
-          </div>
-          <div class="schema-meta-item">
-            <div class="smi-label">Version</div>
-            <div class="smi-value">1.0.0</div>
-          </div>
-          <div class="schema-meta-item">
-            <div class="smi-label">Format</div>
-            <div class="smi-value">JSON-LD</div>
-          </div>
-          <div class="schema-meta-item">
-            <div class="smi-label">Licence</div>
-            <div class="smi-value">CC BY 4.0</div>
+      <div class="hero-right">
+        <div class="fact-card">
+          <div class="fact-num">Art. 60–79</div>
+          <div class="fact-label">Swiss Civil Code</div>
+          <div class="fact-desc">Constituted as a Swiss association under the laws of Switzerland, with permanent seat
+            in Geneva.</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-num">v1.0</div>
+          <div class="fact-label">First Published Standard</div>
+          <div class="fact-desc">EU AI Act machine-readable compliance schema — publicly available and freely citable.
           </div>
         </div>
-        <div class="schema-indicators">
-          <span class="indicator-chip">7 Prohibitions</span>
-          <span class="indicator-chip">8 Risk Categories</span>
-          <span class="indicator-chip">7 Requirements</span>
-          <span class="indicator-chip">GPAI Tiers</span>
-          <span class="indicator-chip">Penalty Structure</span>
+        <div class="fact-card">
+          <div class="fact-num">ISO · ITU</div>
+          <div class="fact-label">Institutional Model</div>
+          <div class="fact-desc">Designed in the tradition of permanent international standards bodies. Not a commercial
+            entity.</div>
         </div>
-        <a href="https://schema.gias.institute" class="schema-link">
-          Access Schema Portal
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="fact-card">
+          <div class="fact-num">Global</div>
+          <div class="fact-label">Jurisdictional Reach</div>
+          <div class="fact-desc">Standards designed to operate across regulatory frameworks without commercial or
+            geopolitical capture.</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="hero-rule"></div>
+  </section>
 
-<!-- MANDATE -->
-<section class="mandate-section" id="mandate">
-  <div class="mandate-inner">
-    <div class="mandate-header">
-      <div class="mandate-label-col reveal">
-        <div class="mandate-big-label">Our Mandate</div>
-        <h2 class="mandate-title">
-          Built for<br>
-          <em>permanence,</em><br>
-          not product.
-        </h2>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <p class="mandate-statement">
-          GIAS Institute is constituted as a permanent institution — not a technology company, not a compliance tool, not a consultancy. Its mandate is the independent development of international standards for artificial intelligence: standards that derive their authority from technical rigour and institutional independence, not from commercial relationships or political alignment.
-        </p>
-        <p class="mandate-statement" style="margin-top: 24px;">
-          The global AI industry requires trust infrastructure in the same way that the internet required ICANN and global finance required SWIFT. GIAS Institute exists to build and operate that infrastructure — permanently, without capture, for the benefit of all jurisdictions.
-        </p>
-      </div>
-    </div>
-    <div class="mandate-pillars">
-      <div class="pillar reveal">
-        <div class="pillar-num">01</div>
-        <div class="pillar-title">Standards Development</div>
-        <div class="pillar-text">International standards for the design, deployment, audit, and certification of AI systems — developed through open, multi-stakeholder processes with public comment periods and documented rationale.</div>
-      </div>
-      <div class="pillar reveal reveal-delay-1">
-        <div class="pillar-num">02</div>
-        <div class="pillar-title">Certification Infrastructure</div>
-        <div class="pillar-text">Technical frameworks through which AI systems, developers, and deployers demonstrate compliance with applicable standards — across jurisdictions and regulatory frameworks simultaneously.</div>
-      </div>
-      <div class="pillar reveal reveal-delay-2">
-        <div class="pillar-num">03</div>
-        <div class="pillar-title">Regulatory Engagement</div>
-        <div class="pillar-text">Active engagement with national and supranational regulatory bodies — EU, African Union, ASEAN, and beyond — to ensure GIAS standards inform and interoperate with the full spectrum of AI governance frameworks.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GOVERNANCE -->
-<section class="governance-section" id="governance">
-  <div class="governance-inner">
-    <div class="section-eyebrow reveal">
-      <span class="eyebrow-tag">Governance</span>
-    </div>
-    <div class="governance-grid">
+  <!-- PUBLISHED STANDARD -->
+  <section class="schema-section" id="standards">
+    <div class="schema-inner">
       <div class="reveal">
-        <p class="governance-statement">
-          GIAS Institute is being constituted as a <strong>Swiss association</strong> under Articles 60 to 79 of the Swiss Civil Code, with its registered seat in Geneva, Canton of Geneva, Switzerland. Its governance structure comprises a <em>General Assembly</em>, a Board of Governors, and a Technical Standards Council.
+        <div class="section-eyebrow">
+          <span class="eyebrow-tag gold">Published Standard</span>
+        </div>
+        <h2 class="section-title-light">
+          The first<br>
+          <em>machine-readable</em><br>
+          AI compliance schema.
+        </h2>
+        <p class="section-body">
+          GIAS Institute has published its inaugural standard: a structured, machine-readable compliance schema for the
+          EU Artificial Intelligence Act. The schema maps every prohibited practice, all eight Annex III high-risk
+          categories, seven mandatory technical requirements, provider obligations, and the full penalty structure — in
+          a format that AI systems can query directly.
         </p>
-        <p class="governance-statement">
-          The Institute operates under a <strong>Mission Lock Provision</strong> and a <strong>Non-Capture Clause</strong> — structural protections ensuring that no single commercial, governmental, or geopolitical interest may control or unduly influence its standard-setting function. No member or affiliated group may hold more than one quarter of voting rights regardless of membership volume.
+        <p class="section-body" style="margin-bottom:0;">
+          This is the technical proof of GIAS's function. Standards bodies do not only govern — they produce. This
+          schema is freely available, openly licensed, and designed to be integrated into compliance tooling, regulatory
+          submissions, and conformity assessment systems worldwide.
         </p>
-        <div class="governance-details">
-          <div class="gov-detail">
-            <div class="gov-dot"></div>
-            <div class="gov-detail-text">
-              <strong>Legal Basis</strong>
-              Swiss Civil Code, Articles 60–79. Permanent seat: Geneva, Switzerland.
-            </div>
-          </div>
-          <div class="gov-detail">
-            <div class="gov-dot"></div>
-            <div class="gov-detail-text">
-              <strong>Membership Categories</strong>
-              Founding Members, Institutional Members (governments, regulators, standards bodies), Associate Members, and Observer Members.
-            </div>
-          </div>
-          <div class="gov-detail">
-            <div class="gov-dot"></div>
-            <div class="gov-detail-text">
-              <strong>Non-Distribution</strong>
-              No part of the Institute's revenue or assets may be distributed to members or officers. All surplus is applied exclusively to the Mission.
-            </div>
-          </div>
-          <div class="gov-detail">
-            <div class="gov-dot"></div>
-            <div class="gov-detail-text">
-              <strong>Standards Procedures</strong>
-              All standards development processes include mandatory public comment periods of not less than sixty days, appeals mechanisms, and documented rationale.
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="governance-aside reveal reveal-delay-2">
-        <div class="gov-aside-card">
-          <div class="gov-aside-label">Mission Statement</div>
-          <div class="gov-aside-text">GIAS Institute is the trust infrastructure that the AI industry runs on.</div>
-        </div>
-        <div class="gov-aside-card">
-          <div class="gov-aside-label">Institutional Model</div>
-          <div class="gov-aside-text">Designed in the tradition of ISO, SWIFT, and ICANN — institutions whose authority derives from structural necessity and the universality of their standards.</div>
-        </div>
-        <div class="gov-aside-card">
-          <div class="gov-aside-label">Membership Enquiries</div>
-          <div class="gov-aside-text">Institutional membership is open to governmental bodies, regulatory authorities, intergovernmental organisations, and national standards bodies. Contact us for details.</div>
+      <div class="reveal reveal-delay-2">
+        <div class="schema-card">
+          <div class="schema-ref">GIAS-SCH-EUAIA-2025-001 &nbsp;·&nbsp; Published Standard</div>
+          <div class="schema-title">EU Artificial Intelligence Act Compliance Schema</div>
+          <div class="schema-meta-grid">
+            <div class="schema-meta-item">
+              <div class="smi-label">Regulation</div>
+              <div class="smi-value">EU 2024/1689</div>
+            </div>
+            <div class="schema-meta-item">
+              <div class="smi-label">Version</div>
+              <div class="smi-value">1.0.0</div>
+            </div>
+            <div class="schema-meta-item">
+              <div class="smi-label">Format</div>
+              <div class="smi-value">JSON-LD</div>
+            </div>
+            <div class="schema-meta-item">
+              <div class="smi-label">Licence</div>
+              <div class="smi-value">CC BY 4.0</div>
+            </div>
+          </div>
+          <div class="schema-indicators">
+            <span class="indicator-chip">7 Prohibitions</span>
+            <span class="indicator-chip">8 Risk Categories</span>
+            <span class="indicator-chip">7 Requirements</span>
+            <span class="indicator-chip">GPAI Tiers</span>
+            <span class="indicator-chip">Penalty Structure</span>
+          </div>
+        <a href="index2.html" class="schema-link">
+            Access Schema Portal
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="contact-inner">
-    <div class="reveal">
-      <h2 class="contact-headline">
-        Contact<br>
-        <em>GIAS Institute</em>
-      </h2>
-      <p class="contact-body">
-        GIAS Institute welcomes enquiries from governments, regulatory authorities, standards bodies, and international organisations regarding membership, standards collaboration, and regulatory engagement.
-      </p>
-      <div class="contact-address">
-        <div class="contact-line">
-          <span class="contact-line-label">Email</span>
-          <a href="mailto:info@gias.institute" class="contact-line-value">info@gias.institute</a>
+  <!-- MANDATE -->
+  <section class="mandate-section" id="mandate">
+    <div class="mandate-inner">
+      <div class="mandate-header">
+        <div class="mandate-label-col reveal">
+          <div class="mandate-big-label">Our Mandate</div>
+          <h2 class="mandate-title">
+            Built for<br>
+            <em>permanence,</em><br>
+            not product.
+          </h2>
         </div>
-        <div class="contact-line">
-          <span class="contact-line-label">Schema</span>
-          <a href="mailto:schema@gias.institute" class="contact-line-value">schema@gias.institute</a>
+        <div class="reveal reveal-delay-1">
+          <p class="mandate-statement">
+            GIAS Institute is constituted as a permanent institution — not a technology company, not a compliance tool,
+            not a consultancy. Its mandate is the independent development of international standards for artificial
+            intelligence: standards that derive their authority from technical rigour and institutional independence,
+            not from commercial relationships or political alignment.
+          </p>
+          <p class="mandate-statement" style="margin-top: 24px;">
+            The global AI industry requires trust infrastructure in the same way that the internet required ICANN and
+            global finance required SWIFT. GIAS Institute exists to build and operate that infrastructure — permanently,
+            without capture, for the benefit of all jurisdictions.
+          </p>
         </div>
-        <div class="contact-line">
-          <span class="contact-line-label">Web</span>
-          <a href="https://gias.institute" class="contact-line-value">gias.institute</a>
+      </div>
+      <div class="mandate-pillars">
+        <div class="pillar reveal">
+          <div class="pillar-num">01</div>
+          <div class="pillar-title">Standards Development</div>
+          <div class="pillar-text">International standards for the design, deployment, audit, and certification of AI
+            systems — developed through open, multi-stakeholder processes with public comment periods and documented
+            rationale.</div>
         </div>
-        <div class="contact-line">
-          <span class="contact-line-label">Seat</span>
-          <span class="contact-line-value">Geneva, Switzerland</span>
+        <div class="pillar reveal reveal-delay-1">
+          <div class="pillar-num">02</div>
+          <div class="pillar-title">Certification Infrastructure</div>
+          <div class="pillar-text">Technical frameworks through which AI systems, developers, and deployers demonstrate
+            compliance with applicable standards — across jurisdictions and regulatory frameworks simultaneously.</div>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <div class="pillar-num">03</div>
+          <div class="pillar-title">Regulatory Engagement</div>
+          <div class="pillar-text">Active engagement with national and supranational regulatory bodies — EU, African
+            Union, ASEAN, and beyond — to ensure GIAS standards inform and interoperate with the full spectrum of AI
+            governance frameworks.</div>
         </div>
       </div>
     </div>
-    <div class="reveal reveal-delay-2">
-      <div class="contact-note">
-        <p class="contact-note-text">
-          The authority of an international standards body derives not from its commercial power or political mandate, but from the structural necessity of its function and the universality of the standards it produces.
+  </section>
+
+  <!-- GOVERNANCE -->
+  <section class="governance-section" id="governance">
+    <div class="governance-inner">
+      <div class="section-eyebrow reveal">
+        <span class="eyebrow-tag">Governance</span>
+      </div>
+      <div class="governance-grid">
+        <div class="reveal">
+          <p class="governance-statement">
+            GIAS Institute is being constituted as a <strong>Swiss association</strong> under Articles 60 to 79 of the
+            Swiss Civil Code, with its registered seat in Geneva, Canton of Geneva, Switzerland. Its governance
+            structure comprises a <em>General Assembly</em>, a Board of Governors, and a Technical Standards Council.
+          </p>
+          <p class="governance-statement">
+            The Institute operates under a <strong>Mission Lock Provision</strong> and a <strong>Non-Capture
+              Clause</strong> — structural protections ensuring that no single commercial, governmental, or geopolitical
+            interest may control or unduly influence its standard-setting function. No member or affiliated group may
+            hold more than one quarter of voting rights regardless of membership volume.
+          </p>
+          <div class="governance-details">
+            <div class="gov-detail">
+              <div class="gov-dot"></div>
+              <div class="gov-detail-text">
+                <strong>Legal Basis</strong>
+                Swiss Civil Code, Articles 60–79. Permanent seat: Geneva, Switzerland.
+              </div>
+            </div>
+            <div class="gov-detail">
+              <div class="gov-dot"></div>
+              <div class="gov-detail-text">
+                <strong>Membership Categories</strong>
+                Founding Members, Institutional Members (governments, regulators, standards bodies), Associate Members,
+                and Observer Members.
+              </div>
+            </div>
+            <div class="gov-detail">
+              <div class="gov-dot"></div>
+              <div class="gov-detail-text">
+                <strong>Non-Distribution</strong>
+                No part of the Institute's revenue or assets may be distributed to members or officers. All surplus is
+                applied exclusively to the Mission.
+              </div>
+            </div>
+            <div class="gov-detail">
+              <div class="gov-dot"></div>
+              <div class="gov-detail-text">
+                <strong>Standards Procedures</strong>
+                All standards development processes include mandatory public comment periods of not less than sixty
+                days, appeals mechanisms, and documented rationale.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="governance-aside reveal reveal-delay-2">
+          <div class="gov-aside-card">
+            <div class="gov-aside-label">Mission Statement</div>
+            <div class="gov-aside-text">GIAS Institute is the trust infrastructure that the AI industry runs on.</div>
+          </div>
+          <div class="gov-aside-card">
+            <div class="gov-aside-label">Institutional Model</div>
+            <div class="gov-aside-text">Designed in the tradition of ISO, SWIFT, and ICANN — institutions whose
+              authority derives from structural necessity and the universality of their standards.</div>
+          </div>
+          <div class="gov-aside-card">
+            <div class="gov-aside-label">Membership Enquiries</div>
+            <div class="gov-aside-text">Institutional membership is open to governmental bodies, regulatory authorities,
+              intergovernmental organisations, and national standards bodies. Contact us for details.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="reveal">
+        <h2 class="contact-headline">
+          Contact<br>
+          <em>GIAS Institute</em>
+        </h2>
+        <p class="contact-body">
+          GIAS Institute welcomes enquiries from governments, regulatory authorities, standards bodies, and
+          international organisations regarding membership, standards collaboration, and regulatory engagement.
         </p>
-        <div class="contact-note-source">GIAS Institute &nbsp;·&nbsp; Founding Principles</div>
+        <div class="contact-address">
+          <div class="contact-line">
+            <span class="contact-line-label">Email</span>
+            <a href="mailto:info@gias.institute" class="contact-line-value">info@gias.institute</a>
+          </div>
+          <div class="contact-line">
+            <span class="contact-line-label">Schema</span>
+            <a href="mailto:schema@gias.institute" class="contact-line-value">schema@gias.institute</a>
+          </div>
+          <div class="contact-line">
+            <span class="contact-line-label">Web</span>
+            <a href="https://gias.institute" class="contact-line-value">gias.institute</a>
+          </div>
+          <div class="contact-line">
+            <span class="contact-line-label">Seat</span>
+            <span class="contact-line-value">Geneva, Switzerland</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="contact-note">
+          <p class="contact-note-text">
+            The authority of an international standards body derives not from its commercial power or political mandate,
+            but from the structural necessity of its function and the universality of the standards it produces.
+          </p>
+          <div class="contact-note-source">GIAS Institute &nbsp;·&nbsp; Founding Principles</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-name">GIAS <span>Institute</span></div>
-    <div class="footer-details">
-      Global Interoperability and AI Standards Institute &nbsp;·&nbsp; Geneva, Switzerland &nbsp;·&nbsp; Established 2025 &nbsp;·&nbsp; Swiss Association Art. 60–79 CC
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">GIAS <span>Institute</span></div>
+      <div class="footer-details">
+        Global Interoperability and AI Standards Institute &nbsp;·&nbsp; Geneva, Switzerland &nbsp;·&nbsp; Established
+        2025 &nbsp;·&nbsp; Swiss Association Art. 60–79 CC
+      </div>
+      <div class="footer-schema">
+        <a href="index2.html">schema.gias.institute</a>
+      </div>
     </div>
-    <div class="footer-schema">
-      <a href="https://schema.gias.institute">schema.gias.institute</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>
